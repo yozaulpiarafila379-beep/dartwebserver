@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Laporan Materi OOP Dart</title>
+    <h1>Nama : Yoza ulpia Rafila :251410004</h1>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f6f9;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        pre {
+            background-color: #1e1e1e;
+            color: #00ff88;
+            padding: 15px;
+            overflow-x: auto;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<h1>LAPORAN MATERI OBJECT ORIENTED PROGRAMMING (OOP) - DART</h1>
+
+<div class="section box">
+<h2>1. Pengertian OOP</h2>
+<p>
+Object Oriented Programming (OOP) adalah paradigma pemrograman yang berorientasi pada objek.
+Objek dibuat dari sebuah kelas (class) yang berisi atribut (data) dan method (fungsi).
+</p>
+
+<p>Konsep utama OOP:</p>
+<ul>
+<li>Class dan Object</li>
+<li>Encapsulation</li>
+<li>Constructor</li>
+<li>Method</li>
+</ul>
+</div>
+
+<div class="section box">
+<h2>2. Contoh Class dan Object (Tanpa Constructor)</h2>
+<pre><code>
+class Car {
+  String? model;
+  String? color;
+
+  void start() {
+    print('Car started!');
+  }
+
+  void stop() {
+    print('Car stopped!');
+  }
+}
+</code></pre>
+<p>
+Pada contoh ini, class Car memiliki atribut model dan color serta method start() dan stop().
+Objek dibuat menggunakan Car().
+</p>
+</div>
+
+<div class="section box">
+<h2>3. Constructor</h2>
+<pre><code>
+class Car {
+  String? model;
+  String? color;
+
+  Car(this.model, this.color);
+
+  void start() {
+    print('Car started!');
+  }
+}
+</code></pre>
+<p>
+Constructor digunakan untuk menginisialisasi nilai atribut saat objek dibuat.
+</p>
+</div>
+
+<div class="section box">
+<h2>4. Validasi Data (Class Mahasiswa)</h2>
+<pre><code>
+class Mahasiswa {
+  String nama;
+  String nim;
+  double ipk;
+
+  Mahasiswa(this.nama, this.nim, this.ipk) {
+    if (ipk < 0.0 || ipk > 4.0) {
+      throw ArgumentError('IPK harus berada dalam rentang 0.0 - 4.0');
+    }
+  }
+}
+</code></pre>
+<p>
+Contoh ini menunjukkan validasi data pada constructor untuk memastikan IPK dalam rentang 0.0 - 4.0.
+</p>
+</div>
+
+<div class="section box">
+<h2>5. Encapsulation</h2>
+<pre><code>
+class Person {
+  String _name;
+  int age;
+
+  Person(this._name, this.age);
+
+  void setName(String name) {
+    _name = name;
+  }
+
+  String getName() {
+    return _name;
+  }
+}
+</code></pre>
+<p>
+Encapsulation membatasi akses langsung ke atribut menggunakan setter dan getter.
+</p>
+</div>
+
+<div class="section box">
+<h2>6. Constructor dengan Named Parameter</h2>
+<pre><code>
+class Produk {
+  final String id;
+  final String nama;
+  final double harga;
+  final int stok;
+  final String kategori;
+
+  Produk({
+    required this.id,
+    required this.nama,
+    required this.harga,
+    this.stok = 0,
+    this.kategori = 'Umum',
+  });
+}
+</code></pre>
+<p>
+Named parameter constructor membuat kode lebih rapi dan mudah dibaca.
+</p>
+</div>
+
+<div class="section box">
+<h2>7. Kesimpulan</h2>
+<p>
+OOP mempermudah pengelolaan program besar karena kode lebih terstruktur,
+mudah dikembangkan, dan lebih aman melalui konsep enkapsulasi.
+Paradigma ini sangat cocok digunakan dalam pembuatan aplikasi skala menengah hingga besar.
+</p>
+</div>
+
+<div class="section box">
+<h2>Tugas Bonus</h2>
+<p>
+Bonus 10 poin diberikan bagi siswa yang mengerjakan soal nomor 3 halaman 15.
+Tugas bonus hanya diterima jika tugas utama (laporan HTML) sudah dinyatakan benar.
+</p>
+</div>
+
+</body>
+</html>
