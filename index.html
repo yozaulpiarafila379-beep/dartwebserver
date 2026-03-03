@@ -1,27 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Laporan OOP Dart - Yoza</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengenalan OOP - Yoza Ulpia Rafila</title>
     <style>
-        .contoh { margin: 20px 0; }
-        button { padding: 10px 15px; background: #2ea44f; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h1 { color: #2c3e50; text-align: center; margin-bottom: 30px; }
+        .identitas { border: 1px solid #3498db; padding: 15px; border-radius: 5px; margin-bottom: 30px; background-color: #f8f9fa; }
+        h2 { color: #3498db; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        pre { background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; border: 1px solid #ddd; }
+        .section { margin-bottom: 30px; }
     </style>
 </head>
 <body>
-    <h1>LAPORAN MATERI OOP - DART</h1>
-    
-    <h2>2. Contoh Class dan Object (Tanpa Constructor)</h2>
-    <div class="contoh">
-        <p>Kode contoh kelas Car:</p>
-        <button onclick="window.open('https://dartpad.dev/?id=[gist-id-kelas-car]', '_blank')">Coba di DartPad</button>
-        <p>Lihat kode di Gist: <a href="https://gist.github.com/[username]/[gist-id-kelas-car]" target="_blank">GitHub Gist</a></p>
+    <h1>OBJECT ORIENTED PROGRAMMING (OOP)</h1>
+
+    <div class="identitas">
+        <p><strong>Nama:</strong><br>Yoza Ulpia Rafila</p>
+        <p><strong>NIM:</strong><br>251410004</p>
     </div>
 
-    <h2>3. Constructor</h2>
-    <div class="contoh">
-        <p>Kode contoh kelas Car dengan Constructor:</p>
-        <button onclick="window.open('https://dartpad.dev/?id=[gist-id-constructor]', '_blank')">Coba di DartPad</button>
-        <p>Lihat kode di Gist: <a href="https://gist.github.com/[username]/[gist-id-constructor]" target="_blank">GitHub Gist</a></p>
+    <div class="section">
+        <h2>PENGERTIAN OOP</h2>
+        <p>Object Oriented Programming (OOP) adalah paradigma pemrograman yang berfokus pada objek sebagai unit utama. Setiap objek memiliki <strong>state</strong> (data) dan <strong>behavior</strong> (perilaku). Tujuan OOP adalah membuat kode yang modular, reusable, dan mudah dipelihara dalam sistem yang kompleks.</p>
     </div>
+
+    <div class="section">
+        <h2>1. Class & Object (Car)</h2>
+        <p>Contoh pendefinisian class <code>Car</code> dengan dua attribute (model dan color) serta dua method (start dan stop):</p>
+        <pre>
+class Car {
+  String? model;
+  String? color;
+
+  void start() {
+    print('Car started!');
+  }
+
+  void stop() {
+    print('Car stopped!');
+  }
+}
+        </pre>
+        <p>Contoh pembuatan objek (instance) dari class <code>Car</code>:</p>
+        <pre>
+void main() {
+  Car myCar = Car();
+  myCar.model = "Hatchback";
+  myCar.color = "Biru";
+
+  myCar.start();
+  myCar.stop();
+}
+        </pre>
+    </div>
+
 </body>
 </html>
