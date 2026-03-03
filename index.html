@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengenalan OOP - Yoza Ulpia Rafila</title>
+    <title>Pengenalan OOP dengan Dart</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
-        h1 { color: #2c3e50; text-align: center; margin-bottom: 30px; }
-        .identitas { border: 1px solid #3498db; padding: 15px; border-radius: 5px; margin-bottom: 30px; background-color: #f8f9fa; }
-        h2 { color: #3498db; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
-        pre { background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; border: 1px solid #ddd; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        h3 { color: #3498db; }
+        pre { background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; }
         .section { margin-bottom: 30px; }
     </style>
 </head>
 <body>
-    <h1>OBJECT ORIENTED PROGRAMMING (OOP)</h1>
+    <h1>PENGENALAN OBJECT ORIENTED PROGRAMMING (OOP) DENGAN DART</h1>
 
-    <div class="identitas">
-        <p><strong>Nama:</strong><br>Yoza Ulpia Rafila</p>
-        <p><strong>NIM:</strong><br>251410004</p>
+    <div class="section">
+        <h2>01 PENGERTIAN OOP</h2>
+        <p>Object Oriented Programming (OOP) adalah paradigma pemrograman yang berfokus pada objek sebagai unit utama. Setiap objek memiliki <strong>state</strong> (data) dan <strong>behavior</strong> (perilaku). Tujuan OOP adalah membuat kode yang modular, reusable, dan mudah dipelihara dalam arsitektur sistem yang kompleks.</p>
     </div>
 
     <div class="section">
-        <h2>PENGERTIAN OOP</h2>
-        <p>Object Oriented Programming (OOP) adalah paradigma pemrograman yang berfokus pada objek sebagai unit utama. Setiap objek memiliki <strong>state</strong> (data) dan <strong>behavior</strong> (perilaku). Tujuan OOP adalah membuat kode yang modular, reusable, dan mudah dipelihara dalam sistem yang kompleks.</p>
+        <h2>02 KONSEP DASAR</h2>
+        <ul>
+            <li><strong>Class</strong>: Blueprint atau cetakan protokol untuk membuat objek.</li>
+            <li><strong>Object</strong>: Manifestasi runtime atau instance nyata dari sebuah class.</li>
+            <li><strong>Attribute</strong>: Representasi data melalui variabel di dalam class.</li>
+            <li><strong>Method</strong>: Logika fungsional atau fungsi di dalam class.</li>
+        </ul>
+        <p>Empat pilar utama ini membentuk struktur dasar dalam pengembangan aplikasi berbasis objek di Dart.</p>
     </div>
 
     <div class="section">
-        <h2>1. Class & Object (Car)</h2>
-        <p>Contoh pendefinisian class <code>Car</code> dengan dua attribute (model dan color) serta dua method (start dan stop):</p>
+        <h2>03 CONTOH CLASS SEDERHANA (CAR)</h2>
+        <p>Class <code>Car</code> dengan dua attribute dan dua method:</p>
         <pre>
 class Car {
   String? model;
@@ -43,12 +48,16 @@ class Car {
   }
 }
         </pre>
-        <p>Contoh pembuatan objek (instance) dari class <code>Car</code>:</p>
+    </div>
+
+    <div class="section">
+        <h2>04 OBJECT INSTANTIATION</h2>
+        <p>Membuat instance dari class <code>Car</code> di fungsi <code>main()</code>:</p>
         <pre>
 void main() {
   Car myCar = Car();
-  myCar.model = "Hatchback";
-  myCar.color = "Biru";
+  myCar.model = "Sedan";
+  myCar.color = "Merah";
 
   myCar.start();
   myCar.stop();
@@ -56,5 +65,117 @@ void main() {
         </pre>
     </div>
 
+    <div class="section">
+        <h2>05 CONSTRUCTORS</h2>
+        <p>Metode inisialisasi yang dipanggil otomatis saat objek dibuat:</p>
+        <pre>
+class Car {
+  String? model;
+  String? color;
+
+  Car(this.model, this.color);
+
+  void start() {
+    print('Engine Online: $model');
+  }
+}
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>06 PRACTICE: MAHASISWA CLASS</h2>
+        <pre>
+class Mahasiswa {
+  String nama;
+  String nim;
+  double ipk;
+
+  Mahasiswa(this.nama, this.nim, this.ipk);
+
+  void tampilkanData() {
+    print('NAMA : $nama | NIM : $nim | IPK : $ipk');
+  }
+}
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>07 ENCAPSULATION</h2>
+        <p>Menyembunyikan detail implementasi dengan attribute private (awalan <code>_</code>):</p>
+        <pre>
+class Person {
+  String _name;
+  int age;
+
+  Person(this._name, this.age);
+
+  void setName(String name) => _name = name;
+  String getName() => _name;
+}
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>08 THIS KEYWORD</h2>
+        <p>Merujuk pada instance saat ini dari class:</p>
+        <pre>
+class Product {
+  String nama;
+  Product(this.nama);
+}
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>09 PRACTICE 2: PRODUK CLASS</h2>
+        <p>Dengan Named Parameters dan <code>required</code>:</p>
+        <pre>
+class Produk {
+  final String id, nama;
+  final double harga;
+  final int stok;
+  final String kategori;
+
+  Produk({
+    required this.id,
+    required this.nama,
+    required this.harga,
+    this.stok = 0,
+    this.kategori = 'Umum',
+  });
+}
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>10 KESIMPULAN</h2>
+        <ul>
+            <li>OOP mempermudah pengelolaan kode melalui enkapsulasi logika dalam Object.</li>
+            <li>Constructor digunakan untuk inisialisasi data primer secara otomatis.</li>
+            <li>Encapsulation menjaga keamanan data dari akses runtime ilegal.</li>
+            <li>Dart mendukung OOP secara native, menjadi fondasi utama framework Flutter.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>11 QUIZ BONUS: HEWAN CLASS</h2>
+        <pre>
+class Hewan {
+  String nama;
+
+  Hewan(this.nama);
+
+  void bersuara() {
+    print('$nama sedang bersuara...');
+    print('Sound Protocol: [DATA_SOUND_GENERATED]');
+  }
+}
+void main() {
+  var myPet = Hewan('Kucing');
+  print('Nama Hewan: ${myPet.nama}');
+  myPet.bersuara();
+}
+        </pre>
+    </div>
 </body>
 </html>
