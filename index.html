@@ -5,44 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengenalan OOP dengan Dart - Yoza Ulpia Rafila</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
-        h1 { color: #2c3e50; text-align: center; margin-bottom: 30px; }
-        .identitas { border: 1px solid #3498db; padding: 15px; border-radius: 5px; margin-bottom: 30px; background-color: #f8f9fa; }
-        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
-        h3 { color: #3498db; }
-        pre { background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; border: 1px solid #ddd; }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            line-height: 1.6; 
+            background-color: #e3f2fd; /* Warna biru muda untuk latar belakang halaman */
+            color: #0d47a1; /* Warna biru gelap untuk teks utama */
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(13, 71, 161, 0.1);
+        }
+        h1 { 
+            color: #0d47a1; /* Biru tua */
+            text-align: center; 
+            margin-bottom: 30px; 
+            border-bottom: 3px solid #2196f3; /* Biru muda */
+            padding-bottom: 10px;
+        }
+        .identitas { 
+            border: 2px solid #2196f3; /* Biru muda */
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 30px; 
+            background-color: #f5fafe; /* Biru sangat muda */
+        }
+        h2 { 
+            color: #0d47a1; /* Biru tua */
+            border-bottom: 2px solid #2196f3; /* Biru muda */
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+        h3 { color: #1976d2; /* Biru sedang */ }
+        pre { 
+            background-color: #f0f7ff; /* Biru sangat muda untuk latar kode */
+            padding: 15px; 
+            border-radius: 5px; 
+            overflow-x: auto; 
+            border: 1px solid #90caf9; /* Biru muda lebih jelas */
+            color: #01579b; /* Biru tua untuk teks kode */
+        }
         .section { margin-bottom: 30px; }
+        strong { color: #0d47a1; /* Menebalkan warna teks penting */ }
+        code { color: #01579b; /* Warna biru untuk tag code */ }
     </style>
 </head>
 <body>
-    <h1>PENGENALAN OBJECT ORIENTED PROGRAMMING (OOP) DENGAN DART</h1>
+    <div class="container">
+        <h1>PENGENALAN OBJECT ORIENTED PROGRAMMING (OOP) DENGAN DART</h1>
 
-    <!-- Bagian Identitas -->
-    <div class="identitas">
-        <p><strong>Nama:</strong> Yoza Ulpia Rafila</p>
-        <p><strong>NIM:</strong> 251410004</p>
-    </div>
+        <!-- Bagian Identitas -->
+        <div class="identitas">
+            <p><strong>Nama:</strong> Yoza Ulpia Rafila</p>
+            <p><strong>NIM:</strong> 251410004</p>
+        </div>
 
-    <div class="section">
-        <h2>01 PENGERTIAN OOP</h2>
-        <p>Object Oriented Programming (OOP) adalah paradigma pemrograman yang berfokus pada objek sebagai unit utama. Setiap objek memiliki <strong>state</strong> (data) dan <strong>behavior</strong> (perilaku). Tujuan OOP adalah membuat kode yang modular, reusable, dan mudah dipelihara dalam arsitektur sistem yang kompleks.</p>
-    </div>
+        <div class="section">
+            <h2>01 PENGERTIAN OOP</h2>
+            <p>Object Oriented Programming (OOP) adalah paradigma pemrograman yang berfokus pada objek sebagai unit utama. Setiap objek memiliki <strong>state</strong> (data) dan <strong>behavior</strong> (perilaku). Tujuan OOP adalah membuat kode yang modular, reusable, dan mudah dipelihara dalam arsitektur sistem yang kompleks.</p>
+        </div>
 
-    <div class="section">
-        <h2>02 KONSEP DASAR</h2>
-        <ul>
-            <li><strong>Class</strong>: Blueprint atau cetakan protokol untuk membuat objek.</li>
-            <li><strong>Object</strong>: Manifestasi runtime atau instance nyata dari sebuah class.</li>
-            <li><strong>Attribute</strong>: Representasi data melalui variabel di dalam class.</li>
-            <li><strong>Method</strong>: Logika fungsional atau fungsi di dalam class.</li>
-        </ul>
-        <p>Empat pilar utama ini membentuk struktur dasar dalam pengembangan aplikasi berbasis objek di Dart.</p>
-    </div>
+        <div class="section">
+            <h2>02 KONSEP DASAR</h2>
+            <ul>
+                <li><strong>Class</strong>: Blueprint atau cetakan protokol untuk membuat objek.</li>
+                <li><strong>Object</strong>: Manifestasi runtime atau instance nyata dari sebuah class.</li>
+                <li><strong>Attribute</strong>: Representasi data melalui variabel di dalam class.</li>
+                <li><strong>Method</strong>: Logika fungsional atau fungsi di dalam class.</li>
+            </ul>
+            <p>Empat pilar utama ini membentuk struktur dasar dalam pengembangan aplikasi berbasis objek di Dart.</p>
+        </div>
 
-    <div class="section">
-        <h2>03 CONTOH CLASS SEDERHANA (CAR)</h2>
-        <p>Class <code>Car</code> dengan dua attribute dan dua method:</p>
-        <pre>
+        <div class="section">
+            <h2>03 CONTOH CLASS SEDERHANA (CAR)</h2>
+            <p>Class <code>Car</code> dengan dua attribute dan dua method:</p>
+            <pre>
 class Car {
   String? model;
   String? color;
@@ -55,13 +97,13 @@ class Car {
     print('Car stopped!');
   }
 }
-        </pre>
-    </div>
+            </pre>
+        </div>
 
-    <div class="section">
-        <h2>04 OBJECT INSTANTIATION</h2>
-        <p>Membuat instance dari class <code>Car</code> di fungsi <code>main()</code>:</p>
-        <pre>
+        <div class="section">
+            <h2>04 OBJECT INSTANTIATION</h2>
+            <p>Membuat instance dari class <code>Car</code> di fungsi <code>main()</code>:</p>
+            <pre>
 void main() {
   Car myCar = Car();
   myCar.model = "Sedan";
@@ -70,13 +112,13 @@ void main() {
   myCar.start();
   myCar.stop();
 }
-        </pre>
-    </div>
+            </pre>
+        </div>
 
-    <div class="section">
-        <h2>05 CONSTRUCTORS</h2>
-        <p>Metode inisialisasi yang dipanggil otomatis saat objek dibuat:</p>
-        <pre>
+        <div class="section">
+            <h2>05 CONSTRUCTORS</h2>
+            <p>Metode inisialisasi yang dipanggil otomatis saat objek dibuat:</p>
+            <pre>
 class Car {
   String? model;
   String? color;
@@ -87,12 +129,12 @@ class Car {
     print('Engine Online: $model');
   }
 }
-        </pre>
-    </div>
+            </pre>
+        </div>
 
-    <div class="section">
-        <h2>06 PRACTICE: MAHASISWA CLASS</h2>
-        <pre>
+        <div class="section">
+            <h2>06 PRACTICE: MAHASISWA CLASS</h2>
+            <pre>
 class Mahasiswa {
   String nama;
   String nim;
@@ -104,13 +146,13 @@ class Mahasiswa {
     print('NAMA : $nama | NIM : $nim | IPK : $ipk');
   }
 }
-        </pre>
-    </div>
+            </pre>
+        </div>
 
-    <div class="section">
-        <h2>07 ENCAPSULATION</h2>
-        <p>Menyembunyikan detail implementasi dengan attribute private (awalan <code>_</code>):</p>
-        <pre>
+        <div class="section">
+            <h2>07 ENCAPSULATION</h2>
+            <p>Menyembunyikan detail implementasi dengan attribute private (awalan <code>_</code>):</p>
+            <pre>
 class Person {
   String _name;
   int age;
@@ -120,24 +162,24 @@ class Person {
   void setName(String name) => _name = name;
   String getName() => _name;
 }
-        </pre>
-    </div>
+            </pre>
+        </div>
 
-    <div class="section">
-        <h2>08 THIS KEYWORD</h2>
-        <p>Merujuk pada instance saat ini dari class:</p>
-        <pre>
+        <div class="section">
+            <h2>08 THIS KEYWORD</h2>
+            <p>Merujuk pada instance saat ini dari class:</p>
+            <pre>
 class Product {
   String nama;
   Product(this.nama);
 }
-        </pre>
-    </div>
+            </pre>
+        </div>
 
-    <div class="section">
-        <h2>09 PRACTICE 2: PRODUK CLASS</h2>
-        <p>Dengan Named Parameters dan <code>required</code>:</p>
-        <pre>
+        <div class="section">
+            <h2>09 PRACTICE 2: PRODUK CLASS</h2>
+            <p>Dengan Named Parameters dan <code>required</code>:</p>
+            <pre>
 class Produk {
   final String id, nama;
   final double harga;
@@ -152,22 +194,22 @@ class Produk {
     this.kategori = 'Umum',
   });
 }
-        </pre>
-    </div>
+            </pre>
+        </div>
 
-    <div class="section">
-        <h2>10 KESIMPULAN</h2>
-        <ul>
-            <li>OOP mempermudah pengelolaan kode melalui enkapsulasi logika dalam Object.</li>
-            <li>Constructor digunakan untuk inisialisasi data primer secara otomatis.</li>
-            <li>Encapsulation menjaga keamanan data dari akses runtime ilegal.</li>
-            <li>Dart mendukung OOP secara native, menjadi fondasi utama framework Flutter.</li>
-        </ul>
-    </div>
+        <div class="section">
+            <h2>10 KESIMPULAN</h2>
+            <ul>
+                <li>OOP mempermudah pengelolaan kode melalui enkapsulasi logika dalam Object.</li>
+                <li>Constructor digunakan untuk inisialisasi data primer secara otomatis.</li>
+                <li>Encapsulation menjaga keamanan data dari akses runtime ilegal.</li>
+                <li>Dart mendukung OOP secara native, menjadi fondasi utama framework Flutter.</li>
+            </ul>
+        </div>
 
-    <div class="section">
-        <h2>11 QUIZ BONUS: HEWAN CLASS</h2>
-        <pre>
+        <div class="section">
+            <h2>11 QUIZ BONUS: HEWAN CLASS</h2>
+            <pre>
 class Hewan {
   String nama;
 
@@ -183,7 +225,8 @@ void main() {
   print('Nama Hewan: ${myPet.nama}');
   myPet.bersuara();
 }
-        </pre>
+            </pre>
+        </div>
     </div>
 </body>
 </html>
