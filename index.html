@@ -77,34 +77,17 @@
 
     <!-- Bagian Class & Object (Car) -->
     <h2>1. Class & Object (Car)</h2>
-    <p>Contoh pendefinisian class Car dengan dua attribute (model dan color) serta dua method (start dan stop).</p>
+    <p>Contoh pendefinisian class Car dengan atribut dan method yang sesuai.</p>
 
     <div class="dart-section">
-        <h3>Contoh Kode 1: Class Car dengan Metode Start & Stop</h3>
+        <h3>Contoh Kode 1: Program Perulangan "Hello"</h3>
         <pre>
-class Car {
-  String? model;
-  String? color;
-
-  void start() {
-    print('Mobil dinyalakan!');
-  }
-
-  void stop() {
-    print('Mobil dimatikan!');
-  }
-}
-
 void main() {
-  Car myCar = Car();
-  myCar.model = "Sedan";
-  myCar.color = "Merah";
-
-  myCar.start();
-  myCar.stop();
+  for (var i = 0; i < 10; i++) {
+    print('hello ${i + 1}');
+  }
 }
         </pre>
-        <!-- URL DartPad diperbarui agar output sesuai perubahan -->
         <iframe src="https://dartpad.dev/8a2e5f1c0b2d3e4f5a6b7c8d9e0f1a2b"></iframe>
     </div>
 
@@ -121,8 +104,8 @@ void main() {
   myCar.model = "Sedan";
   myCar.color = "Merah";
 
-  print('Model Mobil: ${myCar.model}');
-  print('Warna Mobil: ${myCar.color}');
+  print(myCar.model);
+  print(myCar.color);
 }
         </pre>
         <iframe src="https://dartpad.dev/ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
@@ -138,7 +121,7 @@ class Car {
   Car(this.model, this.color);
 
   void start() {
-    print('Mesin Aktif: $model');
+    print('Engine Online: $model');
   }
 }
 
@@ -146,7 +129,7 @@ void main() {
   Car myCar = Car("Sedan", "Merah");
 
   myCar.start();
-  print('Warna Mobil: ${myCar.color}');
+  print(myCar.color);
 }
         </pre>
         <iframe src="https://dartpad.dev/3947e3d1fdf39788ba11363312a67a93"></iframe>
@@ -197,9 +180,9 @@ class Person {
 void main() {
   Person person = Person("Salma", 20);
 
-  print('Usia: ${person.age}');
+  print(person.age);
   person.setName("Aqila");
-  print('Nama: ${person.getName()}');
+  print(person.getName());
 }
         </pre>
         <iframe src="https://dartpad.dev/c59169f43ea6300d62fa22c8a79cee07"></iframe>
@@ -216,7 +199,7 @@ class Product {
 
 void main() {
   Product produk1 = Product("Laptop Gaming");
-  print('Nama Produk: ${produk1.nama}');
+  print(produk1.nama);
 }
         </pre>
         <iframe src="https://dartpad.dev/b46d62a6f572c3e8b0da7fbe46d7c12d"></iframe>
@@ -262,9 +245,9 @@ void main() {
     harga: 20000000,
   );
 
-  print('Produk 1: ${laptop.nama}');
-  print('Produk 2: ${smartphone.nama}');
-  print('Produk 3: ${kamera.nama}');
+  print(laptop.nama);
+  print(smartphone.nama);
+  print(kamera.nama);
 }
         </pre>
         <iframe src="https://dartpad.dev/9994d491f57e635dfcd631521283771f"></iframe>
