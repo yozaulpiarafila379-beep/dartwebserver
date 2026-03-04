@@ -108,12 +108,12 @@ class Car {
 }
 
 void main() {
-  Car mobilYoza = Car();
-  mobilYoza.model = "SUV";
-  mobilYoza.color = "Biru Tua";
+  Car myCar = Car();
+  myCar.model = "Sedan";
+  myCar.color = "Merah";
 
-  mobilYoza.start();
-  mobilYoza.stop();
+  myCar.start();
+  myCar.stop();
 }
         </pre>
         <iframe src="https://dartpad.dev/8f3627510d64b42cab35e6cd91949b40"></iframe>
@@ -128,12 +128,12 @@ class Car {
 }
 
 void main() {
-  Car mobilYoza = Car();
-  mobilYoza.model = "SUV";
-  mobilYoza.color = "Biru Tua";
+  Car myCar = Car();
+  myCar.model = "Sedan";
+  myCar.color = "Merah";
 
-  print(mobilYoza.model);
-  print(mobilYoza.color);
+  print(myCar.model);
+  print(myCar.color);
 }
         </pre>
         <iframe src="https://dartpad.dev/ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
@@ -154,10 +154,10 @@ class Car {
 }
 
 void main() {
-  Car mobilYoza = Car("SUV", "Biru Tua");
+  Car myCar = Car("Sedan", "Merah");
 
-  mobilYoza.start();
-  print(mobilYoza.color);
+  myCar.start();
+  print(myCar.color);
 }
         </pre>
         <iframe src="https://dartpad.dev/3947e3d1fdf39788ba11363312a67a93"></iframe>
@@ -184,8 +184,8 @@ class Mahasiswa {
 }
 
 void main() {
-  Mahasiswa mhsYoza = Mahasiswa("Yoza Ulpia Rafila", "251410004", 3.85);
-  mhsYoza.tampilkanData();
+  Mahasiswa mhs1 = Mahasiswa("Budi Santoso", "20230001", 3.75);
+  mhs1.tampilkanData();
 }
         </pre>
         <iframe src="https://dartpad.dev/7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
@@ -206,11 +206,11 @@ class Person {
 }
 
 void main() {
-  Person orangYoza = Person("Yoza Ulpia Rafila", 20);
+  Person person = Person("Salma", 20);
 
-  print(orangYoza.age);
-  orangYoza.setName("Yoza U. Rafila");
-  print(orangYoza.getName());
+  print(person.age);
+  person.setName("Aqila");
+  print(person.getName());
 }
         </pre>
         <iframe src="https://dartpad.dev/c59169f43ea6300d62fa22c8a79cee07"></iframe>
@@ -226,8 +226,8 @@ class Product {
 }
 
 void main() {
-  Product produkYoza = Product("Laptop Pemrograman Yoza");
-  print(produkYoza.nama);
+  Product produk1 = Product("Laptop Gaming");
+  print(produk1.nama);
 }
         </pre>
         <iframe src="https://dartpad.dev/b46d62a6f572c3e8b0da7fbe46d7c12d"></iframe>
@@ -252,30 +252,30 @@ class Produk {
 }
 
 void main() {
-  Produk laptopYoza = Produk(
+  Produk laptop = Produk(
     id: "P001",
-    nama: "Laptop Pemrograman Yoza",
-    harga: 15500000,
+    nama: "Laptop Gaming",
+    harga: 15000000,
     stok: 15,
     kategori: "Elektronik",
   );
 
-  Produk smartphoneYoza = Produk(
+  Produk smartphone = Produk(
     id: "P002",
-    nama: "Smartphone Yoza",
-    harga: 12500000,
+    nama: "Smartphone Flagship",
+    harga: 12000000,
     stok: 25,
   );
 
-  Produk kameraYoza = Produk(
+  Produk kamera = Produk(
     id: "P003",
-    nama: "Kamera Fotografi Yoza",
-    harga: 20500000,
+    nama: "Kamera Mirrorless",
+    harga: 20000000,
   );
 
-  print(laptopYoza.nama);
-  print(smartphoneYoza.nama);
-  print(kameraYoza.nama);
+  print(laptop.nama);
+  print(smartphone.nama);
+  print(kamera.nama);
 }
         </pre>
         <iframe src="https://dartpad.dev/9994d491f57e635dfcd631521283771f"></iframe>
@@ -284,8 +284,8 @@ void main() {
     <!-- Bagian Kesimpulan -->
     <div class="kesimpulan">
         <h2>Kesimpulan</h2>
-        <p>Dari berbagai contoh kode yang telah ditampilkan dengan data pribadi saya (Yoza Ulpia Rafila), dapat disimpulkan bahwa Object Oriented Programming (OOP) memudahkan pengelolaan kode dengan mengelompokkan data dan perilaku ke dalam kelas. Setiap kelas dapat memiliki atribut untuk menyimpan data dan method untuk menjalankan aksi.</p>
-        <p>Konsep seperti konstruktor (posisional dan bernama) membantu dalam membuat objek dengan cara yang lebih fleksibel, sedangkan properti tersembunyi membantu dalam melindungi data agar tidak diakses secara sembarangan. Dengan menerapkan OOP dan menggunakan nama serta data saya, kode yang dibuat akan menjadi lebih terstruktur, mudah diperbaiki, dan dapat digunakan kembali untuk kebutuhan yang berbeda.</p>
+        <p>Dari berbagai contoh kode yang telah ditampilkan, dapat disimpulkan bahwa Object Oriented Programming (OOP) memudahkan pengelolaan kode dengan mengelompokkan data dan perilaku ke dalam kelas. Setiap kelas dapat memiliki atribut untuk menyimpan data dan method untuk menjalankan aksi.</p>
+        <p>Konsep seperti konstruktor (posisional dan bernama) membantu dalam membuat objek dengan cara yang lebih fleksibel, sedangkan properti tersembunyi membantu dalam melindungi data agar tidak diakses secara sembarangan. Dengan menerapkan OOP, kode yang dibuat akan menjadi lebih terstruktur, mudah diperbaiki, dan dapat digunakan kembali untuk kebutuhan yang berbeda.</p>
     </div>
 </body>
 </html>
