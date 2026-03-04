@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas OOP Yoza Ulpia Rafila</title>
+    <title>Tugas OOP Yoza Ulpia Rafila - Siswa SMA</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -80,216 +80,213 @@
 <body>
     <div class="identitas">
         <p><strong>Nama:</strong> Yoza Ulpia Rafila</p>
-        <p><strong>NIM:</strong> 251410004</p>
-        <p><strong>Kelas:</strong> S1A</p>
+        <p><strong>NIS:</strong> 10251410</p>
+        <p><strong>Kelas:</strong> XI MIPA 2</p>
+        <p><strong>Sekolah:</strong> SMA Negeri 1 Palembang</p>
     </div>
 
-    <h1>Object Oriented Programming (OOP)</h1>
-    <p>Object Oriented Programming (OOP) adalah paradigma pemrograman yang berfokus pada objek sebagai unit utama. Setiap objek memiliki state (data) dan behavior (perilaku). Tujuan OOP adalah membuat kode yang modular, reusable, dan mudah dipelihara dalam sistem yang kompleks.</p>
+    <h1>Object Oriented Programming (OOP) - Tema Siswa SMA</h1>
+    <p>Object Oriented Programming (OOP) adalah paradigma pemrograman yang berfokus pada objek sebagai unit utama. Setiap objek memiliki state (data) dan behavior (perilaku). Pada tugas ini, konsep OOP diterapkan pada kasus data siswa SMA untuk membuat kode yang modular, reusable, dan mudah dipelihara.</p>
 
-    <!-- Bagian Class & Object (Car) -->
-    <h2>1. Class & Object (Car)</h2>
-    <p>Contoh pendefinisian class Car dengan dua attribute (model dan color) serta dua method (start dan stop).</p>
+    <!-- Bagian Class & Object (Jurusan) -->
+    <h2>1. Class & Object (Jurusan)</h2>
+    <p>Contoh pendefinisian class Jurusan dengan dua atribut (namaJurusan dan jumlahSiswa) serta dua method (tampilkanInfo dan tambahSiswa).</p>
 
     <div class="dart-section">
-        <h3>Contoh Kode 1: Class Car dengan Metode Start & Stop</h3>
+        <h3>Contoh Kode 1: Class Jurusan dengan Metode Dasar</h3>
         <pre>
-class Car {
-  String? model;
-  String? color;
+class Jurusan {
+  String? namaJurusan;
+  int? jumlahSiswa;
 
-  void start() {
-    print('Car started!');
+  void tampilkanInfo() {
+    print('Informasi Jurusan!');
   }
 
-  void stop() {
-    print('Car stopped!');
+  void tambahSiswa() {
+    print('Siswa baru ditambahkan ke jurusan!');
   }
 }
 
 void main() {
-  Car myCar = Car();
-  myCar.model = "Sedan";
-  myCar.color = "Merah";
+  Jurusan jurusanKu = Jurusan();
+  jurusanKu.namaJurusan = "MIPA";
+  jurusanKu.jumlahSiswa = 120;
 
-  myCar.start();
-  myCar.stop();
+  jurusanKu.tampilkanInfo();
+  jurusanKu.tambahSiswa();
 }
         </pre>
         <iframe src="https://dartpad.dev/8f3627510d64b42cab35e6cd91949b40"></iframe>
     </div>
 
     <div class="dart-section">
-        <h3>Contoh Kode 2: Class Car dengan Menampilkan Properti</h3>
+        <h3>Contoh Kode 2: Class Jurusan dengan Menampilkan Properti</h3>
         <pre>
-class Car {
-  String? model;
-  String? color;
+class Jurusan {
+  String? namaJurusan;
+  int? jumlahSiswa;
 }
 
 void main() {
-  Car myCar = Car();
-  myCar.model = "Sedan";
-  myCar.color = "Merah";
+  Jurusan jurusanKu = Jurusan();
+  jurusanKu.namaJurusan = "MIPA";
+  jurusanKu.jumlahSiswa = 120;
 
-  print(myCar.model);
-  print(myCar.color);
+  print(jurusanKu.namaJurusan);
+  print(jurusanKu.jumlahSiswa);
 }
         </pre>
         <iframe src="https://dartpad.dev/ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
     </div>
 
     <div class="dart-section">
-        <h3>Contoh Kode 3: Class Car dengan Konstruktor Posisional</h3>
+        <h3>Contoh Kode 3: Class Jurusan dengan Konstruktor Posisional</h3>
         <pre>
-class Car {
-  String model;
-  String color;
+class Jurusan {
+  String namaJurusan;
+  int jumlahSiswa;
 
-  Car(this.model, this.color);
+  Jurusan(this.namaJurusan, this.jumlahSiswa);
 
-  void start() {
-    print('Engine Online: $model');
+  void tampilkanInfo() {
+    print('Jurusan Aktif: $namaJurusan');
   }
 }
 
 void main() {
-  Car myCar = Car("Sedan", "Merah");
+  Jurusan jurusanKu = Jurusan("MIPA", 120);
 
-  myCar.start();
-  print(myCar.color);
+  jurusanKu.tampilkanInfo();
+  print(jurusanKu.jumlahSiswa);
 }
         </pre>
         <iframe src="https://dartpad.dev/3947e3d1fdf39788ba11363312a67a93"></iframe>
     </div>
 
     <!-- Bagian Contoh Lainnya -->
-    <h2>2. Contoh Kelas Lain dalam OOP</h2>
+    <h2>2. Contoh Kelas Lain dalam OOP (Tema Siswa)</h2>
 
     <div class="dart-section">
-        <h3>Contoh Kode 4: Class Mahasiswa (Data Yoza)</h3>
+        <h3>Contoh Kode 4: Class Siswa</h3>
         <pre>
-class Mahasiswa {
+class Siswa {
   String nama;
-  String nim;
-  double ipk;
+  String nis;
+  double nilaiRataRata;
 
-  Mahasiswa(this.nama, this.nim, this.ipk);
+  Siswa(this.nama, this.nis, this.nilaiRataRata);
 
   void tampilkanData() {
     print('Nama : $nama');
-    print('NIM : $nim');
-    print('IPK : $ipk');
+    print('NIS : $nis');
+    print('Nilai Rata-Rata : $nilaiRataRata');
   }
 }
 
 void main() {
-  Mahasiswa mhs1 = Mahasiswa("Yoza Ulpia Rafila", "251410004", 3.90);
-  mhs1.tampilkanData();
+  Siswa siswa1 = Siswa("Yoza Ulpia Rafila", "10251410", 89.25);
+  siswa1.tampilkanData();
 }
         </pre>
-        <p><em>Catatan: Kode di atas sudah diubah dengan data kamu. Untuk menjalankan versi ini, kamu bisa menyalin kode ke DartPad.</em></p>
         <iframe src="https://dartpad.dev/7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
     </div>
 
     <div class="dart-section">
-        <h3>Contoh Kode 5: Class Person dengan Properti Tersembunyi (Data Yoza)</h3>
+        <h3>Contoh Kode 5: Class IndividuSiswa dengan Properti Tersembunyi</h3>
         <pre>
-class Person {
-  String _name;
-  int age;
+class IndividuSiswa {
+  String _namaLengkap;
+  int usia;
 
-  Person(this._name, this.age);
+  IndividuSiswa(this._namaLengkap, this.usia);
 
-  void setName(String name) => _name = name;
+  void perbaruiNama(String namaBaru) => _namaLengkap = namaBaru;
 
-  String getName() => _name;
+  String ambilNama() => _namaLengkap;
 }
 
 void main() {
-  Person person = Person("Yoza Ulpia Rafila", 20);
+  IndividuSiswa siswa = IndividuSiswa("Yoza Ulpia Rafila", 17);
 
-  print(person.age);
-  person.setName("Yoza U. Rafila");
-  print(person.getName());
+  print(siswa.usia);
+  siswa.perbaruiNama("Yoza U. Rafila");
+  print(siswa.ambilNama());
 }
         </pre>
-        <p><em>Catatan: Kode di atas sudah diubah dengan data kamu. Untuk menjalankan versi ini, kamu bisa menyalin kode ke DartPad.</em></p>
         <iframe src="https://dartpad.dev/c59169f43ea6300d62fa22c8a79cee07"></iframe>
     </div>
 
     <div class="dart-section">
-        <h3>Contoh Kode 6: Class Product dengan Konstruktor Sederhana</h3>
+        <h3>Contoh Kode 6: Class AlatTulis dengan Konstruktor Sederhana</h3>
         <pre>
-class Product {
-  String nama;
+class AlatTulis {
+  String namaBarang;
 
-  Product(this.nama);
+  AlatTulis(this.namaBarang);
 }
 
 void main() {
-  Product produk1 = Product("Laptop Gaming Yoza");
-  print(produk1.nama);
+  AlatTulis barangSiswa = AlatTulis("Pulpen Mekanik Yoza");
+  print(barangSiswa.namaBarang);
 }
         </pre>
-        <p><em>Catatan: Nama produk sudah disesuaikan agar lebih personal.</em></p>
         <iframe src="https://dartpad.dev/b46d62a6f572c3e8b0da7fbe46d7c12d"></iframe>
     </div>
 
     <div class="dart-section">
-        <h3>Contoh Kode 7: Class Produk dengan Konstruktor Bernama</h3>
+        <h3>Contoh Kode 7: Class BukuPelajaran dengan Konstruktor Bernama</h3>
         <pre>
-class Produk {
-  final String id, nama;
+class BukuPelajaran {
+  final String kodeBuku, namaBuku;
   final double harga;
-  final int stok;
-  final String kategori;
+  final int jumlahHalaman;
+  final String mataPelajaran;
 
-  Produk({
-    required this.id,
-    required this.nama,
+  BukuPelajaran({
+    required this.kodeBuku,
+    required this.namaBuku,
     required this.harga,
-    this.stok = 0,
-    this.kategori = "Umum",
+    this.jumlahHalaman = 100,
+    this.mataPelajaran = "Umum",
   });
 }
 
 void main() {
-  Produk laptop = Produk(
-    id: "P001",
-    nama: "Laptop Gaming Yoza",
-    harga: 15000000,
-    stok: 15,
-    kategori: "Elektronik",
+  BukuPelajaran matematika = BukuPelajaran(
+    kodeBuku: "B001",
+    namaBuku: "Matematika SMA Kelas XI",
+    harga: 75000,
+    jumlahHalaman: 150,
+    mataPelajaran: "Matematika",
   );
 
-  Produk smartphone = Produk(
-    id: "P002",
-    nama: "Smartphone Flagship Yoza",
-    harga: 12000000,
-    stok: 25,
+  BukuPelajaran fisika = BukuPelajaran(
+    kodeBuku: "B002",
+    namaBuku: "Fisika SMA Kelas XI",
+    harga: 80000,
+    jumlahHalaman: 160,
   );
 
-  Produk kamera = Produk(
-    id: "P003",
-    nama: "Kamera Mirrorless Yoza",
-    harga: 20000000,
+  BukuPelajaran bahasaInggris = BukuPelajaran(
+    kodeBuku: "B003",
+    namaBuku: "Bahasa Inggris SMA",
+    harga: 65000,
   );
 
-  print(laptop.nama);
-  print(smartphone.nama);
-  print(kamera.nama);
+  print(matematika.namaBuku);
+  print(fisika.namaBuku);
+  print(bahasaInggris.namaBuku);
 }
         </pre>
-        <p><em>Catatan: Nama produk sudah disesuaikan agar lebih personal.</em></p>
         <iframe src="https://dartpad.dev/9994d491f57e635dfcd631521283771f"></iframe>
     </div>
 
     <!-- Bagian Kesimpulan -->
     <div class="kesimpulan">
         <h2>Kesimpulan</h2>
-        <p>Dari berbagai contoh kode yang telah ditampilkan, dapat disimpulkan bahwa Object Oriented Programming (OOP) memudahkan pengelolaan kode dengan mengelompokkan data dan perilaku ke dalam kelas. Setiap kelas dapat memiliki atribut untuk menyimpan data dan method untuk menjalankan aksi.</p>
-        <p>Konsep seperti konstruktor (posisional dan bernama) membantu dalam membuat objek dengan cara yang lebih fleksibel, sedangkan properti tersembunyi membantu dalam melindungi data agar tidak diakses secara sembarangan. Dengan menerapkan OOP, kode yang dibuat akan menjadi lebih terstruktur, mudah diperbaiki, dan dapat digunakan kembali untuk kebutuhan yang berbeda. Contoh-contoh di atas juga telah disesuaikan dengan data pribadi saya (Yoza Ulpia Rafila) agar lebih relevan dengan identitas saya sebagai mahasiswa yang sedang mempelajari konsep OOP.</p>
+        <p>Dari berbagai contoh kode dengan tema siswa SMA yang telah ditampilkan, dapat disimpulkan bahwa Object Oriented Programming (OOP) memudahkan pengelolaan kode dengan mengelompokkan data dan perilaku ke dalam kelas. Setiap kelas dapat memiliki atribut untuk menyimpan informasi siswa, jurusan, atau barang terkait sekolah, serta method untuk menjalankan aksi yang relevan.</p>
+        <p>Konsep seperti konstruktor (posisional dan bernama) membantu dalam membuat objek dengan cara yang lebih fleksibel, sedangkan properti tersembunyi membantu dalam melindungi data agar tidak diakses secara sembarangan. Dengan menerapkan OOP pada kasus siswa SMA dan menggunakan data pribadi saya (Yoza Ulpia Rafila, NIS 10251410), kode yang dibuat menjadi lebih terstruktur, mudah diperbaiki, dan dapat digunakan kembali untuk kebutuhan yang berbeda.</p>
     </div>
 </body>
 </html>
