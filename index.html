@@ -15,7 +15,7 @@
 body{
     font-family:'Courier New', monospace;
     background:#010409;
-    color:#00ff88;
+    color:#00eaff;
     overflow:hidden;
 }
 
@@ -26,8 +26,8 @@ body::before{
     width:100%;
     height:100%;
     background:
-    linear-gradient(rgba(0,255,136,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,136,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0,234,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,234,255,0.05) 1px, transparent 1px);
     background-size:50px 50px;
 }
 
@@ -38,15 +38,15 @@ body::before{
     height:100%;
     background:repeating-linear-gradient(
         to bottom,
-        rgba(0,255,136,0.05),
-        rgba(0,255,136,0.05) 1px,
+        rgba(0,234,255,0.05),
+        rgba(0,234,255,0.05) 1px,
         transparent 1px,
         transparent 3px
     );
     pointer-events:none;
 }
 
-/* TERMINAL BOX */
+/* TERMINAL */
 .terminal{
     position:absolute;
     top:50%;
@@ -55,22 +55,22 @@ body::before{
     width:80%;
     max-width:600px;
     padding:20px;
-    border:1px solid #00ff88;
+    border:1px solid #00eaff;
     background:rgba(0,0,0,0.8);
-    box-shadow:0 0 15px #00ff88;
+    box-shadow:0 0 15px #00eaff;
 }
 
-/* TEXT */
+/* TEXT LINE */
 .line{
     font-size:14px;
     margin:5px 0;
     white-space:nowrap;
     overflow:hidden;
-    border-right:2px solid #00ff88;
+    border-right:2px solid #00eaff;
     width:0;
 }
 
-/* TYPING EFFECT */
+/* TYPING */
 @keyframes typing{
     from{ width:0; }
     to{ width:100%; }
@@ -80,16 +80,16 @@ body::before{
     50%{ border-color:transparent; }
 }
 
-/* ANIMATION DELAY PER BARIS */
+/* ANIMATION */
 .line:nth-child(1){ animation:typing 2s steps(40) forwards, blink 0.7s infinite; }
 .line:nth-child(2){ animation:typing 2s steps(40) forwards 2s, blink 0.7s infinite; }
 .line:nth-child(3){ animation:typing 2s steps(40) forwards 4s, blink 0.7s infinite; }
 .line:nth-child(4){ animation:typing 2s steps(40) forwards 6s, blink 0.7s infinite; }
 .line:nth-child(5){ animation:typing 2s steps(40) forwards 8s, blink 0.7s infinite; }
 
-/* SUCCESS TEXT */
+/* SUCCESS */
 .success{
-    color:#00ff88;
+    color:#00eaff;
     margin-top:10px;
     opacity:0;
     animation:show 1s forwards 10s;
