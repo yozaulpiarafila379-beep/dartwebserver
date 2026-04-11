@@ -121,21 +121,25 @@ void main() {
 
     <div class="dart-section">
         <h3>Contoh Kode 2: Class Car dengan Menampilkan Properti</h3>
-        <pre>
-class Car {
-  String? model;
-  String? color;
+     <pre>class Car {
+  String model;
+  String color;
+
+  Car(this.model, this.color);
+
+  void start() {
+    print('Engine Online: $model');
+  }
 }
 
 void main() {
-  Car myCar = Car();
-  myCar.model = "Sedan";
-  myCar.color = "Merah";
+  Car myCar = Car("Sedan", "Merah");
 
-  print(myCar.model);
+  myCar.start();
   print(myCar.color);
 }
-        </pre>
+     </pre>   
+        
         <iframe src="https://dartpad.dev/48053abb362d5dbfd83fd49019b08cf8"></iframe>
     </div>
 
@@ -165,9 +169,10 @@ void main() {
 
     <!-- Bagian Contoh Lainnya -->
     <h2>2. Contoh Kelas Lain dalam OOP</h2>
-
+<h3>Object Oriented Programming (OOP) adalah paradigma pemrograman yang berorientasi pada objek. Dalam OOP, program dibangun menggunakan class dan object yang memiliki data (atribut) dan perilaku (method).
+Tujuan OOP adalah membuat kode lebih terstruktur, mudah dipahami, mudah dikembangkan, dan dapat digunakan kembali. Konsep utama dalam OOP meliputi Encapsulation, Inheritance, Polymorphism, dan Abstraction.</h3>
     <div class="dart-section">
-        <h3>Contoh Kode 4: Class Mahasiswa</h3>
+        <h3>Contoh Kode 1: Class Mahasiswa</h3>
         <pre>
 class Mahasiswa {
   String nama;
@@ -184,7 +189,7 @@ class Mahasiswa {
 }
 
 void main() {
-  Mahasiswa mhs1 = Mahasiswa("Budi Santoso", "20230001", 3.75);
+  Mahasiswa mhs1 = Mahasiswa("Yoza Ulpia Rafila", "251410004", 3.85);
   mhs1.tampilkanData();
 }
         </pre>
@@ -192,7 +197,7 @@ void main() {
     </div>
 
     <div class="dart-section">
-        <h3>Contoh Kode 5: Class Person dengan Properti Tersembunyi</h3>
+        <h3>Contoh Kode 2: Class Person dengan Properti Tersembunyi</h3>
         <pre>
 class Person {
   String _name;
@@ -217,7 +222,7 @@ void main() {
     </div>
 
     <div class="dart-section">
-        <h3>Contoh Kode 6: Class Product dengan Konstruktor Sederhana</h3>
+        <h3>Contoh Kode 3: Class Product dengan Konstruktor Sederhana</h3>
         <pre>
 class Product {
   String nama;
@@ -234,7 +239,7 @@ void main() {
     </div>
 
     <div class="dart-section">
-        <h3>Contoh Kode 7: Class Produk dengan Konstruktor Bernama</h3>
+        <h3>Contoh Kode 4: Class Produk dengan Konstruktor Bernama</h3>
         <pre>
 class Produk {
   final String id, nama;
