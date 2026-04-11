@@ -126,93 +126,213 @@ iframe{
 <p>Kelas : SI2A</p>
 </div>
 
-<h1>OBJECT ORIENTED PROGRAMMING</h1>
-
-<!-- 1 -->
+ <!-- 1 -->
 <div class="section">
-<h2>1. Class Hewan</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=569d91a7d55a7348d68fff15153e81f8&split=60"></iframe>
+<h2>1. Pengenalan Sealed Class </h2>
+<p>
+Sealed class adalah jenis class dalam Dart yang digunakan untuk membatasi pewarisan (inheritance),
+sehingga class tersebut hanya dapat diturunkan (di-extend) oleh class lain yang berada dalam file yang sama.
+Dengan adanya pembatasan ini, pengembang dapat mengontrol dengan jelas struktur turunan class,
+sehingga program menjadi lebih aman, terorganisir, dan mudah dipahami.
+
+Pada contoh di atas, ApiResponse digunakan sebagai sealed class yang memiliki dua turunan,
+yaitu Success dan Error. Kedua class tersebut merepresentasikan kondisi berhasil dan gagal,
+sehingga memudahkan dalam pengelolaan alur program dan pengecekan tipe data.
+</p>
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulfia Rafila
+// NIM   : 251410004
+// Kelas : SI2A
+
+sealed class ApiResponse {}
+
+class Success extends ApiResponse {
+  final String message;
+  Success(this.message);
+}
+
+class Error extends ApiResponse {
+  final String errorMessage;
+  Error(this.errorMessage);
+}
+
+void main() {
+  print("Contoh penggunaan Sealed Class");
+}
+</code></pre>
+</div>
+<button class="button" onclick="showImage('img1','vscode1.png')">
+Tampilkan VS Code 1
+</button>
+
+<img id="img1" style="display:none; width:100%; margin-top:15px; border-radius:8px;">
 </div>
 
-<!-- 2 -->
+     <!-- 2 -->
 <div class="section">
-<h2>2. Class Bentuk</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=51f1e01964dbc6a42f15ae6de6d01cd7&split=60"></iframe>
+<h2>2. Keuntungan Penggunaan Sealed class </h2>
+<p>
+Keuntungan sealed class dalam Dart adalah dapat membatasi pewarisan hanya dalam satu file,
+sehingga semua subclass harus dibuat dalam file yang sama. Hal ini membuat program lebih
+terkontrol, aman, dan mudah dipahami karena semua kemungkinan turunan sudah diketahui.
+
+Pada kode di atas, ApiResponse digunakan sebagai sealed class dengan dua turunan,
+yaitu Success dan Error, yang mewakili kondisi berhasil dan gagal. Dengan adanya
+fungsi handleResponse(), program dapat melakukan pengecekan tipe untuk menampilkan
+hasil yang sesuai, sehingga alur program menjadi lebih rapi, jelas, dan terstruktur.
+</p>
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulfia Rafila
+// NIM   : 251410004
+// Kelas : SI2A
+
+sealed class ApiResponse {}
+
+class Success extends ApiResponse {
+  final String message;
+  Success(this.message);
+}
+
+class Error extends ApiResponse {
+  final String errorMessage;
+  Error(this.errorMessage);
+}
+
+void handleResponse(ApiResponse response) {
+  if (response is Success) {
+    print("Success: ${response.message}");
+  } else if (response is Error) {
+    print("Error: ${response.errorMessage}");
+  }
+}
+
+void main() {
+  handleResponse(Success("Data berhasil diambil"));
+  handleResponse(Error("Terjadi kesalahan"));
+}
+</code></pre>
+</div>
+<button class="button" onclick="showImage('img2','vscode2.png')">
+Tampilkan VS Code 2
+</button>
+
+<img id="img2" style="display:none; width:100%; margin-top:15px; border-radius:8px;">
 </div>
 
-<!-- 3 -->
+    <!-- 3 -->
 <div class="section">
-<h2>3. Operator is & as</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=985fc039a838958b54b59daced97342b&split=60"></iframe>
+<h2>3. Polimorfisme (Method Overriding) </h2>
+<p>
+Polimorfisme adalah konsep dalam pemrograman berorientasi objek yang memungkinkan
+sebuah method memiliki banyak bentuk perilaku. Salah satu bentuk polimorfisme adalah
+method overriding, yaitu ketika subclass mendefinisikan ulang method yang sudah ada
+pada superclass.
+
+Pada kode di atas, class Animal memiliki method speak() yang menampilkan suara umum.
+Kemudian class Dog sebagai turunan dari Animal melakukan overriding pada method tersebut
+untuk menghasilkan suara yang berbeda, yaitu "Woof!". Hal ini menunjukkan bahwa method
+yang sama dapat memiliki perilaku yang berbeda tergantung pada objek yang memanggilnya.
+</p>
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulfia Rafila
+// NIM   : 251410004
+// Kelas : SI2A
+
+class Animal {
+  void speak() {
+    print("Hewan bersuara");
+  }
+}
+
+class Dog extends Animal {
+  @override
+  void speak() {
+    print("Anjing: Woof!");
+  }
+}
+
+void main() {
+  Animal a = Animal();
+  a.speak();
+
+  Dog d = Dog();
+  d.speak();
+}
+</code></pre>
+</div>
+<button class="button" onclick="showImage('img3','vscode3.png')">
+Tampilkan VS Code 3
+</button>
+
+<img id="img3" style="display:none; width:100%; margin-top:15px; border-radius:8px;">
 </div>
 
-<!-- 4 -->
+ <!-- 4 -->
 <div class="section">
-<h2>4. Abstract Kendaraan</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=f9e85ea1387eae713f9048757cd5c97d&split=60"></iframe>
-</div>
+<h2>4. Method Overriding Pada Class Turunan </h2>
+<p>
+Method overriding adalah konsep dalam pemrograman berorientasi objek di mana
+class turunan (subclass) mendefinisikan ulang method yang sudah ada pada
+class induk (superclass). Tujuannya adalah untuk memberikan perilaku yang
+berbeda sesuai dengan kebutuhan masing-masing objek.
 
-<!-- 5 -->
-<div class="section">
-<h2>5. Alat Musik</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=4cbcd9a48cdf3ba3299256cd07e38fd4&split=60"></iframe>
-</div>
+Pada kode di atas, class Animal memiliki method speak() yang menampilkan
+suara umum. Kemudian class Dog dan Cat sebagai turunan melakukan overriding
+terhadap method tersebut untuk menghasilkan suara yang berbeda, yaitu
+"Woof!" dan "Meow!". Hal ini menunjukkan bahwa method yang sama dapat
+memiliki perilaku yang berbeda tergantung pada objek yang digunakan.
 
-<!-- 6 -->
-<div class="section">
-<h2>6. Interface Pesawat</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=3b8dc0f6aea58918e73caa74605041d2&split=60"></iframe>
-</div>
+Dengan demikian, method overriding membantu membuat program lebih fleksibel,
+mudah dikembangkan, dan mendukung konsep polimorfisme dalam pemrograman.
+</p>
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulfia Rafila
+// NIM   : 251410004
+// Kelas : SI2A
 
-<!-- 7 -->
-<div class="section">
-<h2>7. Static MathUtils</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=f2850564f91e2111c095f1f7061815ca&split=60"></iframe>
-</div>
+class Animal {
+  void speak() {
+    print("Hewan bersuara");
+  }
+}
 
-<!-- 8 -->
-<div class="section">
-<h2>8. Metode Pembayaran</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=30d7eb58b28945ee4998758223c35531&split=60"></iframe>
-</div>
+class Dog extends Animal {
+  @override
+  void speak() {
+    print("Dog: Woof!");
+  }
+}
 
-<!-- 9 -->
-<div class="section">
-<h2>9. Bentuk Geometri</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=c350c82b3cc671251063832e6b0c19df&split=60"></iframe>
-</div>
+class Cat extends Animal {
+  @override
+  void speak() {
+    print("Cat: Meow!");
+  }
+}
 
-<!-- 10 -->
-<div class="section">
-<h2>10. Class Pekerja</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=192859027ed0a9a63a7bcb9ffce7bbd4&split=60"></iframe>
-</div>
+void main() {
+  Animal a = Animal();
+  a.speak();
 
-<!-- 11 -->
-<div class="section">
-<h2>11. Multi Pekerja</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=3c0d98f4423954c616b846a6e244a9d2&split=60"></iframe>
-</div>
+  Animal d = Dog();
+  d.speak();
 
-<!-- 12 -->
-<div class="section">
-<h2>12. Polimorfisme List</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=1d346ba1594eeb7437e3492f50ce60e0&split=60"></iframe>
+  Animal c = Cat();
+  c.speak();
+}
+</code></pre>
 </div>
+<button class="button" onclick="showImage('img4','vscode4.png')">
+Tampilkan VS Code 4
+</button>
 
-<!-- 13 -->
-<div class="section">
-<h2>13. Multiple Interface</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=5e1bf40dc32c12ec326f796f912dbbd1&split=60"></iframe>
+<img id="img4" style="display:none; width:100%; margin-top:15px; border-radius:8px;">
 </div>
-
-<!-- 14 -->
-<div class="section">
-<h2>14. Utility Math</h2>
-<iframe src="https://dartpad.dev/embed-inline.html?id=0011f7b4b5bfed2a0ab49e4c9e12229d&split=60"></iframe>
-</div>
-
-</div>
-
-</body>
-</html>
