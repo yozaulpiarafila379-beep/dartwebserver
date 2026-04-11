@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OOP - Hacker HUD System</title>
+<title>Background Hacker HUD</title>
 
 <style>
 *{
@@ -13,179 +13,86 @@
 }
 
 body{
-    font-family: 'Courier New', monospace;
     background:#010409;
-    color:#00eaff;
-    overflow-x:hidden;
+    overflow:hidden;
 }
 
-/* GRID BACKGROUND */
+/* GRID */
 body::before{
     content:"";
     position:fixed;
     width:100%;
     height:100%;
     background:
-    linear-gradient(rgba(0,234,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,234,255,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0,234,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,234,255,0.08) 1px, transparent 1px);
     background-size:50px 50px;
-    z-index:-2;
+    z-index:-3;
 }
 
-/* RADAR SCAN EFFECT */
+/* RADAR SCAN */
 body::after{
     content:"";
     position:fixed;
     width:100%;
     height:100%;
-    background: radial-gradient(circle at center, rgba(0,234,255,0.1), transparent 70%);
-    animation:scan 6s linear infinite;
-    z-index:-1;
+    background: radial-gradient(circle at center, rgba(0,234,255,0.15), transparent 70%);
+    animation:scan 5s linear infinite;
+    z-index:-2;
 }
 
 @keyframes scan{
-    0%{ transform:scale(0.8); opacity:0.2; }
-    50%{ transform:scale(1.2); opacity:0.4; }
-    100%{ transform:scale(0.8); opacity:0.2; }
+    0%{
+        transform:scale(0.8);
+        opacity:0.2;
+    }
+    50%{
+        transform:scale(1.3);
+        opacity:0.5;
+    }
+    100%{
+        transform:scale(0.8);
+        opacity:0.2;
+    }
 }
 
-.container{
-    padding:40px;
-}
-
-/* HEADER */
-.identitas{
-    border:1px solid #00eaff;
-    padding:20px;
-    margin-bottom:30px;
-    background:rgba(0,0,0,0.7);
-    box-shadow:0 0 15px #00eaff;
-    border-radius:8px;
-}
-
-/* TITLE */
-h1{
-    text-align:center;
-    margin-bottom:30px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    text-shadow:0 0 10px #00eaff;
-}
-
-/* CARD */
-.dart-section{
-    margin-bottom:40px;
-    padding:20px;
-    border:1px solid #00eaff;
-    background:rgba(0,0,0,0.8);
-    box-shadow:0 0 10px #00eaff;
-    border-radius:8px;
-    transition:0.3s;
-    position:relative;
-}
-
-/* HUD CORNER EFFECT */
-.dart-section::before,
-.dart-section::after{
-    content:"";
-    position:absolute;
-    width:20px;
-    height:20px;
-    border:2px solid #00eaff;
-}
-
-.dart-section::before{
-    top:-5px;
-    left:-5px;
-    border-right:none;
-    border-bottom:none;
-}
-
-.dart-section::after{
-    bottom:-5px;
-    right:-5px;
-    border-left:none;
-    border-top:none;
-}
-
-.dart-section:hover{
-    transform:scale(1.02);
-    box-shadow:0 0 25px #00eaff;
-}
-
-/* CODE */
-pre{
-    background:black;
-    padding:15px;
-    overflow-x:auto;
-    color:#00eaff;
-    border:1px solid #00eaff;
-}
-
-/* IFRAME */
-iframe{
+/* SCANLINE (LAYAR MONITOR) */
+.scanline{
+    position:fixed;
     width:100%;
-    height:500px;
-    margin-top:15px;
-    border:1px solid #00eaff;
-    border-radius:6px;
+    height:100%;
+    background:repeating-linear-gradient(
+        to bottom,
+        rgba(0,255,255,0.05),
+        rgba(0,255,255,0.05) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events:none;
+    z-index:-1;
 }
 
-/* TERMINAL TEXT EFFECT */
-h2{
-    color:#00eaff;
-    text-shadow:0 0 5px #00eaff;
+/* GLOW HALUS */
+.glow{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background: radial-gradient(circle, rgba(0,234,255,0.1), transparent 60%);
+    animation:glowMove 8s infinite alternate;
+    z-index:-4;
+}
+
+@keyframes glowMove{
+    from{ transform:translate(-50px,-50px); }
+    to{ transform:translate(50px,50px); }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-<div class="identitas">
-    <p><strong>Nama:</strong> Yoza Ulpia Rafila</p>
-    <p><strong>NIM:</strong> 251410004</p>
-</div>
-
-<h1>HACKER SYSTEM INTERFACE</h1>
-
-<div class="dart-section">
-    <h2>CLASS DAN OBJECT</h2>
-    <iframe src="https://dartpad.dev/embed-inline.html?id=8f3627510d64b42cab35e6cd91949b40"></iframe>
-</div>
-
-<div class="dart-section">
-    <h2>CONSTRUCTOR</h2>
-    <iframe src="https://dartpad.dev/embed-inline.html?id=ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
-</div>
-
-<div class="dart-section">
-    <h2>VALIDASI DATA</h2>
-    <iframe src="https://dartpad.dev/embed-inline.html?id=3947e3d1fdf39788ba11363312a67a93"></iframe>
-</div>
-
-<div class="dart-section">
-    <h2>ENCAPSULATION</h2>
-    <iframe src="https://dartpad.dev/embed-inline.html?id=7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
-</div>
-
-<div class="dart-section">
-    <h2>Contoh Kode 5</h2>
-    <iframe src="https://dartpad.dev/embed-inline.html?id=c59169f43ea6300d62fa22c8a79cee07"></iframe>
-</div>
-
-<div class="dart-section">
-    <h2>Contoh Kode 6</h2>
-    <iframe src="https://dartpad.dev/embed-inline.html?id=b46d62a6f572c3e8b0da7fbe46d7c12d"></iframe>
-</div>
-
-<div class="dart-section">
-    <h2>Contoh Kode 7</h2>
-    <iframe src="https://dartpad.dev/100486b88c43b13fde87ed103144c740"></iframe>
-</div>
-
-</div>
+<div class="glow"></div>
+<div class="scanline"></div>
 
 </body>
 </html>
