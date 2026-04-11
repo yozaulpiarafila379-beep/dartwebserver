@@ -1,921 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacker OOP System</title>
 
-<!-- 1 -->
-<div class="section">
-<h2>1. Class Hewan (Polimorfisme)</h2>
-<p>Kode ini mendemonstrasikan polimorfisme dan abstraksi. Kelas abstrak Hewan memiliki metode bersuara() yang belum diimplementasikan. Subkelas seperti Kucing, Anjing, dan Burung kemudian menyediakan implementasi unik untuk bersuara(), menunjukkan perilaku yang berbeda dari metode yang sama.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-abstract class Hewan {
-  String nama = "Hewan";
-
-  void bersuara();
+body{
+    font-family:'Courier New', monospace;
+    background:#020617;
+    color:#38bdf8;
+    overflow-x:hidden;
 }
 
-class Kucing extends Hewan {
-  Kucing() {
-    nama = "Kucing";
-  }
-
-  @override
-  void bersuara() {
-    print('$nama: Meong');
-  }
+/* DATA STREAM */
+body::before{
+    content:"010101 SYSTEM ONLINE 110010 ACCESSING DATA 010101 CONNECTED 110011 EXECUTING MODULE";
+    position:fixed;
+    width:200%;
+    height:100%;
+    color:rgba(56,189,248,0.05);
+    font-size:20px;
+    letter-spacing:2px;
+    animation:moveData 20s linear infinite;
+    z-index:-3;
 }
 
-class Anjing extends Hewan {
-  Anjing() {
-    nama = "Anjing";
-  }
-
-  @override
-  void bersuara() {
-    print('$nama: Guk guk');
-  }
+@keyframes moveData{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
 }
 
-class Burung extends Hewan {
-  Burung() {
-    nama = "Burung";
-  }
-
-  @override
-  void bersuara() {
-    print('$nama: Cuit cuit');
-  }
+/* GRID */
+body::after{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(rgba(56,189,248,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,0.05) 1px, transparent 1px);
+    background-size:60px 60px;
+    z-index:-2;
 }
 
-void main() {
-print("=== Tugas Polimorfisme & Abstraksi ===");
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-print("--------------------------");
-
-  List<Hewan> daftarHewan = [
-    Kucing(),
-    Anjing(),
-    Burung()
-  ];
-
-  for (var h in daftarHewan) {
-    h.bersuara();
-  }
+/* SCANLINE */
+.scanline{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:repeating-linear-gradient(
+        to bottom,
+        rgba(56,189,248,0.05),
+        rgba(56,189,248,0.05) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events:none;
+    z-index:-1;
 }
 
+/* TOPBAR */
+.topbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:10px;
+    background:#020617;
+    border-bottom:1px solid #38bdf8;
+    box-shadow:0 0 10px #38bdf8;
+    font-size:13px;
+}
 
-</code></pre>
+.blink{
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0;}
+}
+
+/* CONTAINER */
+.container{
+    padding:80px 20px;
+}
+
+/* SECTION */
+.section{
+    background:rgba(2,6,23,0.85);
+    border:1px solid #0ea5e9;
+    box-shadow:0 0 10px #38bdf8;
+    margin:30px;
+    padding:20px;
+    border-radius:12px;
+    position:relative;
+}
+
+.section::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    background:#38bdf8;
+}
+
+/* TITLE */
+h2{
+    margin-bottom:10px;
+    border-right:2px solid #38bdf8;
+    white-space:nowrap;
+    overflow:hidden;
+    animation:typing 3s steps(40), blink 0.7s infinite;
+}
+
+@keyframes typing{
+    from{width:0}
+    to{width:100%}
+}
+
+/* CODE */
+.code-box{
+    background:black;
+    border:1px solid #38bdf8;
+    padding:10px;
+}
+
+/* BUTTON */
+.button{
+    background:black;
+    color:#38bdf8;
+    border:1px solid #38bdf8;
+    padding:10px 20px;
+    margin-top:10px;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+}
+
+.button::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg, transparent, #38bdf8, transparent);
+    left:-100%;
+}
+
+.button:hover::before{
+    left:100%;
+    transition:0.5s;
+}
+
+.button:hover{
+    box-shadow:0 0 15px #38bdf8;
+}
+
+/* IFRAME */
+iframe{
+    width:100%;
+    height:400px;
+    margin-top:10px;
+    border:1px solid #38bdf8;
+    border-radius:10px;
+}
+
+/* LOADER */
+.loader{
+    width:0%;
+    height:4px;
+    background:#38bdf8;
+    margin-top:5px;
+    box-shadow:0 0 10px #38bdf8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="scanline"></div>
+
+<div class="topbar">
+● SYSTEM STATUS: ONLINE <span class="blink">|</span> SECURE CONNECTION ESTABLISHED
 </div>
-<button class="button" onclick="runDart('f1','https://dartpad.dev/embed-inline.html?id=569d91a7d55a7348d68fff15153e81f8&split=60')">Run Dart 1 </button>
+
+<div class="container">
+
+<div class="section">
+<h2>1. Class Hewan</h2>
+
+<button class="button" onclick="runDart('f1','https://dartpad.dev/embed-inline.html?id=569d91a7d55a7348d68fff15153e81f8&split=60')">
+Run Program
+</button>
+
+<div class="loader" id="loader1"></div>
+
 <iframe id="f1"></iframe>
 </div>
 
-<!-- 2 -->
-<div class="section">
-<h2>2. Class Bentuk (Polimorfisme)</h2>
-<p>Ini adalah contoh polimorfisme melalui method overriding. Kelas Bentuk memiliki metode gambar() default. Lingkaran dan Persegi menimpa (override) metode ini untuk menampilkan pesan penggambaran yang spesifik untuk bentuk mereka masing-masing.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
-
-class Bentuk {
-  void gambar() {
-    print('Menggambar bentuk');
-  }
-}
-
-class Lingkaran extends Bentuk {
-  @override
-  void gambar() {
-    print('Menggambar lingkaran');
-  }
-}
-
-class Persegi extends Bentuk {
-  @override
-  void gambar() {
-    print('Menggambar persegi');
-  }
-}
-
-void main() {
-print("=== Polimorfisme Bentuk ===");
-  // TAMBAHKAN INI
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-print("--------------------------------");
-
-  List<Bentuk> daftarBentuk = [
-    Lingkaran(),
-    Persegi()
-  ];
-
-  for (var bentuk in daftarBentuk) {
-    bentuk.gambar();
-  }
-}
-
-</code></pre>
-</div>
-<button class="button" onclick="runDart('f2','https://dartpad.dev/embed-inline.html?id=51f1e01964dbc6a42f15ae6de6d01cd7&split=60')">Run Dart 2 </button>
-<iframe id="f2"></iframe>
 </div>
 
-<!-- 3 -->
-<div class="section">
-<h2>3. Class Kendaraan (Operator `is` & `as`)</h2>
-<p>Kode ini menunjukkan cara menggunakan operator is untuk memeriksa tipe objek pada saat runtime dan operator as untuk melakukan type casting atau perubahan tipe data. Penggunaan as? untuk safe casting mencegah error jika tipe tidak cocok.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
+<script>
+function runDart(id, url){
+    document.getElementById(id).src = url;
 
-class Kendaraan {}
+    let loader = document.getElementById("loader1");
+    loader.style.width = "0%";
 
-class Mobil extends Kendaraan {
-  void klakson() {
-    print('Tin!');
-  }
+    let i = 0;
+    let interval = setInterval(()=>{
+        i += 10;
+        loader.style.width = i + "%";
+        if(i >= 100) clearInterval(interval);
+    },100);
 }
+</script>
 
-void main() {
-print("=== Operator is dan as ===");
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-print("--------------------------");
-
-  Kendaraan k = Mobil();
-
-  // Mengecek tipe dengan "is"
-  if (k is Mobil) {
-    print("Cek tipe: k adalah Mobil");
-    k.klakson();
-  }
-
-  // Safe casting dengan "as?"
-  print("Safe casting:");
-  (k as Mobil?)?.klakson();
-}
-</code></pre>
-</div>
-<button class="button" onclick="runDart('f3','https://dartpad.dev/embed-inline.html?id=985fc039a838958b54b59daced97342b&split=60')">Run Dart 3 </button>
-<iframe id="f3"></iframe>
-</div>
-
-<!-- 4 -->
-<div class="section">
-<h2>4. Abstract Class Kendaraan</h2>
-<p>Contoh abstraksi. Kelas Kendaraan dideklarasikan sebagai abstrak dan memiliki metode abstrak start(), yang berarti kelas ini tidak bisa diinstansiasi langsung dan start() harus diimplementasikan oleh kelas turunan (contohnya Mobil). Metode stop() adalah konkret dan memiliki implementasi langsung.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
-
-abstract class Kendaraan {
-  String merk;
-
-  // Constructor
-  Kendaraan(this.merk);
-
-  // Method abstract
-  void start();
-
-  // Method concrete
-  void stop() {
-    print('Kendaraan berhenti');
-  }
-}
-
-class Mobil extends Kendaraan {
-  // Constructor turunan
-  Mobil(String merk) : super(merk);
-
-  @override
-  void start() {
-    print('Mobil $merk menyala');
-  }
-}
-
-void main() {
-print("=== Abstract Class Kendaraan ===");
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-print("--------------------------------");
-
-  Mobil mobil = Mobil("Toyota");
-
-  mobil.start();
-  mobil.stop();
-}
-</code></pre>
-</div>
-<button class="button" onclick="runDart('f4','https://dartpad.dev/embed-inline.html?id=f9e85ea1387eae713f9048757cd5c97d&split=60')">Run Dart 4 </button>
-<iframe id="f4"></iframe>
-</div>
-
-<!-- 5 -->
-<div class="section">
-<h2>5. Class AlatMusik (Abstraksi)</h2>
-<p>Kode ini mendemonstrasikan kelas abstrak AlatMusik dengan metode mainkan() yang abstrak (harus diimplementasikan) dan metode info() yang konkret (sudah memiliki implementasi). Kelas Gitar mewarisi dari AlatMusik dan mengimplementasikan mainkan() secara spesifik.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
-
-abstract class AlatMusik {
-  String nama;
-
-  // Constructor
-  AlatMusik(this.nama);
-
-  // Method abstract
-  void mainkan();
-
-  // Method concrete
-  void info() {
-    print('Ini adalah alat musik $nama');
-  }
-}
-
-class Gitar extends AlatMusik {
-  // Constructor turunan
-  Gitar(String nama) : super(nama);
-
-  @override
-  void mainkan() {
-    print('Gitar $nama berbunyi: Jreng jreng...');
-  }
-}
-
-void main() {
-print("=== Abstract Class Alat Musik ===");
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-print("--------------------------------");
-
-  Gitar gitar = Gitar("Akustik");
-
-  gitar.info();
-  gitar.mainkan();
-}
-</code></pre>
-</div><button class="button" onclick="runDart('f5','https://dartpad.dev/embed-inline.html?id=4cbcd9a48cdf3ba3299256cd07e38fd4&split=60')">Run Dart 5 </button>
-<iframe id="f5"></iframe>
-</div>
-
-<!-- 6 -->
-<div class="section">
-<h2>6. Class Pesawat (Interface)</h2>
-<p>Menunjukkan konsep interface dalam Dart. Kelas Pesawat mengimplementasikan Kendaraan dan Terbang (yang keduanya adalah kelas abstrak yang bertindak sebagai interface). Ini berarti Pesawat harus menyediakan implementasi untuk semua metode yang didefinisikan dalam kedua "interface" tersebut.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
-
-// Abstract Class
-abstract class Kendaraan {
-  void jalan();
-}
-
-// Interface
-abstract class Terbang {
-  void terbang();
-}
-
-// Class Pesawat
-class Pesawat extends Kendaraan implements Terbang {
-  @override
-  void jalan() {
-    print('Pesawat berjalan di landasan');
-  }
-
-  @override
-  void terbang() {
-    print('Pesawat terbang di udara');
-  }
-}
-
-void main() {
-print("=== OOP Dart ===");
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-print("--------------------");
-
-  Pesawat pesawat = Pesawat();
-
-  pesawat.jalan();
-  pesawat.terbang();
-}
-</code></pre>
-</div>
-<button class="button" onclick="runDart('f6','https://dartpad.dev/embed-inline.html?id=3b8dc0f6aea58918e73caa74605041d2&split=60')">Run Dart 6 </button>
-<iframe id="f6"></iframe>
-</div>
-
-<!-- 7 -->
-<div class="section">
-<h2>7. Class Mathutils (Static)</h2>
-<p>Ini adalah contoh penggunaan static member. Anggota statis ini dapat diakses langsung melalui nama kelas tanpa perlu membuat objek.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
-
-class MathUtils {
-// Static variable
-static double pi = 3.14;
-
-// Static method
-static int add(int a, int b) {
-return a + b;
-}
-}
-
-void main() {
-print("=== Static Members dan Method ===");
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-print("---------------------------------");
-
-print('Nilai pi : ${MathUtils.pi}');
-print('Result   : ${MathUtils.add(10,20)}');
-}
-</code></pre>
-</div>
-<button class="button" onclick="runDart('f7','https://dartpad.dev/embed-inline.html?id=f2850564f91e2111c095f1f7061815ca&split=60')">Run Dart 7 </button>
-<iframe id="f7"></iframe>
-</div>
-
-<!-- 8 -->
-<div class="section">
-<h2>8. Class MetodePembayaran (Interface)</h2>
-<p>Contoh interface. Kelas abstrak MetodePembayaran mendefinisikan kontrak bayar(). Kelas KartuKredit dan EWallet mengimplementasikan interface ini.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
-
-// Interface
-abstract class MetodePembayaran {
-void bayar(double jumlah);
-}
-
-// Class Kartu Kredit
-class KartuKredit implements MetodePembayaran {
-@override
-void bayar(double jumlah) {
-print('Membayar Rp$jumlah menggunakan Kartu Kredit');
-}
-}
-
-// Class E-Wallet
-class EWallet implements MetodePembayaran {
-@override
-void bayar(double jumlah) {
-print('Membayar Rp$jumlah menggunakan E-Wallet');
-}
-}
-
-void main() {
-print("=== Metode Pembayaran ===");
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-print("-------------------------");
-
-KartuKredit kartu = KartuKredit();
-EWallet ewallet = EWallet();
-
-kartu.bayar(50000);
-ewallet.bayar(25000);
-}
-</code></pre>
-</div>
-<button class="button" onclick="runDart('f8','https://dartpad.dev/embed-inline.html?id=30d7eb58b28945ee4998758223c35531&split=60')">Run Dart 8 </button>
-<iframe id="f8"></iframe>
-</div>
-
-<!-- 9 -->
-<div class="section">
-<h2>9. Class Bentuk Geometri</h2>
-<p>Menggabungkan abstraksi dan polimorfisme. Kelas Bentuk mendefinisikan metode hitungLuas() dan hitungKeliling(). Persegi dan Lingkaran mengimplementasikan rumusnya masing-masing.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
-
-abstract class Bentuk {
-double hitungLuas();
-double hitungKeliling();
-
-void info() {
-print('Luas: ${hitungLuas()}, Keliling: ${hitungKeliling()}');
-}
-}
-
-// Class Persegi
-class Persegi extends Bentuk {
-double sisi;
-
-Persegi(this.sisi);
-
-@override
-double hitungLuas() {
-return sisi * sisi;
-}
-
-@override
-double hitungKeliling() {
-return 4 * sisi;
-}
-
-@override
-void info() {
-print(
-'Persegi dengan sisi $sisi memiliki luas ${hitungLuas()} dan keliling ${hitungKeliling()}');
-}
-}
-
-// Class Lingkaran
-class Lingkaran extends Bentuk {
-double radius;
-
-Lingkaran(this.radius);
-
-@override
-double hitungLuas() {
-return 3.14 * radius * radius;
-}
-
-@override
-double hitungKeliling() {
-return 2 * 3.14 * radius;
-}
-
-@override
-void info() {
-print(
-'Lingkaran dengan radius $radius memiliki luas ${hitungLuas()} dan keliling ${hitungKeliling()}');
-}
-}
-
-void main() {
-print("=== Sistem Bentuk Geometri ===");
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-print("--------------------------------");
-
-Persegi persegi = Persegi(4);
-Lingkaran lingkaran = Lingkaran(7);
-
-persegi.info();
-lingkaran.info();
-}
-</code></pre>
-</div>
-<button class="button" onclick="runDart('f9','https://dartpad.dev/embed-inline.html?id=c350c82b3cc671251063832e6b0c19df&split=60')">Run Dart 9 </button>
-<iframe id="f9"></iframe>
-</div>
-
-<!-- 10 -->
-<div class="section">
-<h2>10. Class Pekerja (Bonus 1)</h2>
-<p>Contoh abstract class dengan constructor dan method info serta bekerja.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
-/// Bonus 1
-
-abstract class Pekerja {
-String nama;
-
-Pekerja(this.nama);
-
-void bekerja();
-
-void info() {
-print("Nama: $nama");
-}
-}
-
-class Programmer extends Pekerja {
-Programmer(String nama) : super(nama);
-
-@override
-void bekerja() {
-print("$nama bekerja sebagai Programmer");
-}
-}
-
-void main() {
-print("=== Class Pekerja ===");
-  // TAMBAHKAN INI
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-  print("--------------------------------");
-
-  Programmer p = Programmer("Andi");
-  p.info();
-  p.bekerja();
-}
-
-
-/*
-Hasil Output:
-Nama: Andi
-Andi bekerja sebagai Programmer
-*/
-</code></pre>
-</div>
-<!-- ✅ LINK SUDAH DIUBAH AGAR TAMPILANNYA BERSIH DAN LANGSUNG RUN -->
-<button class="button" onclick="runDart('f10','https://dartpad.dev/embed-inline.html?id=192859027ed0a9a63a7bcb9ffce7bbd4&split=60')">Run Dart 10 </button>
-<iframe id="f10"></iframe>
-</div>
-
-<!-- 11 -->
-<div class="section">
-<h2>11. Multi Class Pekerja (Bonus 2)</h2>
-<p>Membuat beberapa class turunan Pekerja dengan perilaku berbeda.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
-/// Bonus 2
-
-abstract class Pekerja {
-String nama;
-Pekerja(this.nama);
-
-void bekerja();
-}
-
-class Programmer extends Pekerja {
-Programmer(String nama) : super(nama);
-
-@override
-void bekerja() {
-print("$nama adalah Programmer");
-}
-}
-
-class Dokter extends Pekerja {
-Dokter(String nama) : super(nama);
-
-@override
-void bekerja() {
-print("$nama adalah Dokter");
-}
-}
-
-class Guru extends Pekerja {
-Guru(String nama) : super(nama);
-
-@override
-void bekerja() {
-print("$nama adalah Guru");
-}
-}
-
-
-void main() {
-print("=== Multi Class Pekerja ===");
-  // TAMBAHKAN INI
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-  print("--------------------------------");
-
-  Programmer p = Programmer("Andi");
-  Dokter d = Dokter("Budi");
-  Guru g = Guru("Citra");
-
-  p.bekerja();
-  d.bekerja();
-  g.bekerja();
-}
-
-/*
-Hasil Output:
-Andi adalah Programmer
-Budi adalah Dokter
-Citra adalah Guru
-*/
-</code></pre>
-</div>
-<button class="button" onclick="runDart('f11','https://dartpad.dev/embed-inline.html?id=3c0d98f4423954c616b846a6e244a9d2&split=60')">Run Dart 11 </button>
-<iframe id="f11"></iframe>
-</div>
-
-<!-- 12 -->
-<div class="section">
-<h2>12. Polimorfisme List (Bonus 3)</h2>
-<p>Menyimpan berbagai objek ke dalam satu list dan memanggil method secara serentak.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
-/// Bonus 3
-
-abstract class Pekerja {
-String nama;
-Pekerja(this.nama);
-
-void bekerja();
-}
-
-class Programmer extends Pekerja {
-Programmer(String nama) : super(nama);
-
-@override
-void bekerja() {
-print("$nama sedang coding");
-}
-}
-
-class Dokter extends Pekerja {
-Dokter(String nama) : super(nama);
-
-@override
-void bekerja() {
-print("$nama sedang mengobati pasien");
-}
-}
-
-class Guru extends Pekerja {
-Guru(String nama) : super(nama);
-
-@override
-void bekerja() {
-print("$nama sedang mengajar");
-}
-}
-
-void main() {
-print("=== Polimorfisme List ===");
-  // TAMBAHKAN INI
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-  print("--------------------------------");
-
-  List<Pekerja> daftar = [
-    Programmer("Andi"),
-    Dokter("Budi"),
-    Guru("Citra"),
-  ];
-
-  for(var p in daftar) {
-    p.bekerja();
-  }
-}
-
-
-/*
-Hasil Output:
-Andi sedang coding
-Budi sedang mengobati pasien
-Citra sedang mengajar
-*/
-</code></pre>
-</div>
-<button class="button" onclick="runDart('f12','https://dartpad.dev/embed-inline.html?id=1d346ba1594eeb7437e3492f50ce60e0&split=60')">Run Dart 12 </button>
-<iframe id="f12"></iframe>
-</div>
-
-<!-- 13 -->
-<div class="section">
-<h2>13. Multiple Interface (Bonus 4)</h2>
-<p>Satu class mengimplementasikan banyak abstract class sekaligus.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
-/// Bonus 4
-
-abstract class Komputer {
-void menjalankanProgram();
-}
-
-abstract class Kamera {
-void ambilFoto();
-}
-
-abstract class Telepon {
-void menelepon();
-}
-
-class Tablet implements Komputer, Kamera, Telepon {
-@override
-void menjalankanProgram() {
-print("Tablet menjalankan program");
-}
-
-@override
-void ambilFoto() {
-print("Tablet mengambil foto");
-}
-
-@override
-void menelepon() {
-print("Tablet menelepon");
-}
-}
-
-void main() {
-print("=== Multiple Interface ===");
-  // TAMBAHKAN INI
-print("Nama  : Yoza Ulpia Rafila");
-print("NIM   : 251410004");
-print("Kelas : SI2A");
-  print("--------------------------------");
-
-  Tablet tablet = Tablet();
-  tablet.menjalankanProgram();
-  tablet.ambilFoto();
-  tablet.menelepon();
-}
-
-
-/*
-Hasil Output:
-Tablet menjalankan program
-Tablet mengambil foto
-Tablet menelepon
-*/
-</code></pre>
-</div>
-<button class="button" onclick="runDart('f13','https://dartpad.dev/embed-inline.html?id=5e1bf40dc32c12ec326f796f912dbbd1&split=60')">Run Dart 13</button>
-<iframe id="f13"></iframe>
-</div>
-
-<!-- 14 -->
-<div class="section">
-<h2>14. Utility Math (Bonus 5)</h2>
-<p>Kumpulan fungsi matematika statis seperti faktorial, prima, rata-rata, dan median.</p>
-<h3>Kode Dart:</h3>
-<div class="code-box">
-<pre><code>
-// ==========================================
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
-// ==========================================
-/// Bonus 5
-
-import 'dart:math';
-
-class MathUtils {
-
-  static Random rand = Random(1);
-
-  static int faktorial(int n) {
-    if(n <= 1) return 1;
-    return n * faktorial(n-1);
-  }
-
-  static bool cekPrima(int n) {
-    if(n <= 1) return false;
-    for(int i = 2; i <= sqrt(n); i++) {
-      if(n % i == 0) return false;
-    }
-    return true;
-  }
-
-  static double pembulatan(double angka, int desimal) {
-    double scale = pow(10, desimal).toDouble();
-    return (angka * scale).round() / scale;
-  }
-
-  static int randomInt(int min, int max) {
-    return min + rand.nextInt(max - min + 1);
-  }
-
-  static double rataRata(List<int> list) {
-    int total = list.reduce((a, b) => a + b);
-    return total / list.length;
-  }
-
-  static double median(List<int> list) {
-    List<int> sorted = List.from(list)..sort();
-    int n = sorted.length;
-
-    if(n % 2 == 0) {
-      return (sorted[n ~/ 2 - 1] + sorted[n ~/ 2]) / 2;
-    } else {
-      return sorted[n ~/ 2].toDouble();
-    }
-  }
-}
-
-void main() {
-  print("=== Utility Math ===");
-  print("Nama  : Yoza Ulpia Rafila");
-  print("NIM   : 251410004");
-  print("Kelas : SI2A");
-  print("--------------------------------");
-
-  print("Faktorial 5 = ${MathUtils.faktorial(5)}");
-  print("Prima 7 = ${MathUtils.cekPrima(7)}");
-  print("Pembulatan = ${MathUtils.pembulatan(3.14159, 2)}");
-  print("Contoh angka = ${MathUtils.randomInt(1, 10)}");
-  print("Rata-rata = ${MathUtils.rataRata([10, 20, 30, 40, 50])}");
-  print("Median = ${MathUtils.median([10, 20, 30, 40, 50])}");
-}
-/*
-Hasil Output:
-Faktorial 5 = 120
-Prima 7 = true
-Pembulatan = 3.14
-contoh angka = 3
-Rata-rata = 30
-Median = 30
-*/
-        
-</code></pre>
-</div>
-<button class="button" onclick="runDart('f14','https://dartpad.dev/embed-inline.html?id=0011f7b4b5bfed2a0ab49e4c9e12229d&split=60')">Run Dart 14</button>
-<iframe id="f14"></iframe>
-</div>
-
-<!-- 15 -->
-<div class="section">
-<h2>15. Kesimpulan</h2>
-<div class="summary-box">
-<p>Dari latihan-latihan di atas, dapat disimpulkan bahwa:</p>
-<ul>
-  <li><strong>Abstraksi</strong> menyembunyikan detail implementasi dan hanya menampilkan fungsi penting kepada pengguna.</li>
-  <li><strong>Polimorfisme</strong> memungkinkan kita menggunakan satu nama method untuk melakukan berbagai tindakan yang berbeda tergantung objeknya.</li>
-  <li><strong>Inheritance (Pewarisan)</strong> memungkinkan pembuatan class baru berdasarkan class yang sudah ada, sehingga kode lebih efisien dan terstruktur.</li>
-  <li><strong>Interface</strong> berfungsi sebagai kontrak yang memaksa class turunan untuk mengimplementasikan semua method yang didefinisikan di dalamnya.</li>
-  <li>Dengan menggabungkan konsep-konsep OOP (Object-Oriented Programming) ini, program menjadi lebih mudah dikembangkan, dipelihara, dan dimodifikasi di kemudian hari.</li>
-</ul>
-</div>
-</div>
-
-</div> <!-- Penutup Container -->
 </body>
 </html>
