@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OOP - Matrix Theme</title>
+<title>OOP - Cyberpunk Theme</title>
 
 <style>
 *{
@@ -14,17 +14,29 @@
 
 body{
     font-family: Consolas, monospace;
-    background:#0a0f14;
-    color:#66e0ff
+    background:#0a0a0a;
+    color:#00ffff;
+    overflow-x:hidden;
 }
 
 /* MATRIX CANVAS */
-ctx.fillstyle = "#66e0ff;
+#matrixCanvas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-2;
 }
 
 /* RAIN EFFECT */
 .rain{
-    background:rgba(102,224,225,0,6);
+    position:fixed;
+    width:2px;
+    height:20px;
+    background:linear-gradient(#00ffff, #ff00ff);
+    animation:fall linear infinite;
+    z-index:-1;
 }
 
 @keyframes fall{
@@ -37,28 +49,49 @@ ctx.fillstyle = "#66e0ff;
 }
 
 .identitas{
-    border:1px solid #3399cc;
-    box-shadow:0 0 10px #66e0ff;
-    background:rgba(10,15,20,0.8);
+    border:1px solid #00ffff;
+    padding:20px;
+    margin-bottom:30px;
+    background:rgba(10,10,10,0.8);
+    box-shadow:0 0 15px #ff00ff;
+    border-radius:10px;
 }
 
 h1{
-    text-shadow:0 0 10px #66e0ff;
+    text-align:center;
+    margin-bottom:30px;
+    text-shadow:0 0 10px #00ffff, 0 0 20px #ff00ff;
 }
 
 .dart-section{
-   border:1px solid #3399cc;
-    box-shadow:0 0 10px #66e0ff;
-    background:rgba(10,15,20,0.85);
+    margin-bottom:40px;
+    padding:20px;
+    border:1px solid #00ffff;
+    background:rgba(10,10,10,0.85);
+    box-shadow:0 0 15px #ff00ff;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.dart-section:hover{
+    transform:scale(1.02);
+    box-shadow:0 0 25px #ff00ff;
 }
 
 pre{
-   border:1px solid #3399cc;
-    color:#66e0ff;
+    background:black;
+    padding:15px;
+    overflow-x:auto;
+    color:#00ffff;
+    border:1px solid #00ffff;
 }
 
 iframe{
-   border:1px solid #3399cc;
+    width:100%;
+    height:500px;
+    margin-top:15px;
+    border:1px solid #ff00ff;
+    border-radius:10px;
 }
 </style>
 </head>
@@ -134,11 +167,12 @@ function draw(){
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "#00ff88";
     ctx.font = fontSize + "px monospace";
 
     for(let i = 0; i < drops.length; i++){
         const text = letters.charAt(Math.floor(Math.random()*letters.length));
+        
+        ctx.fillStyle = Math.random() > 0.5 ? "#00ffff" : "#ff00ff";
         ctx.fillText(text, i*fontSize, drops[i]*fontSize);
 
         if(drops[i]*fontSize > canvas.height && Math.random() > 0.975){
