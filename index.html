@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OOP - Cyberpunk Theme</title>
+<title>OOP - DNA Cyber Lab</title>
 
 <style>
 *{
@@ -14,9 +14,44 @@
 
 body{
     font-family: Consolas, monospace;
-    background:#0a0a0a;
-    color:#00ffff;
+    background:#020617;
+    color:#38bdf8;
     overflow-x:hidden;
+}
+
+/* BACKGROUND DNA GLOW */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at 20% 30%, rgba(56,189,248,0.15), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(34,197,94,0.15), transparent 40%);
+    animation:moveBg 10s linear infinite;
+    z-index:-2;
+}
+
+@keyframes moveBg{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-50px); }
+    100%{ transform:translateY(0); }
+}
+
+/* GRID SCI-FI */
+body::after{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background: repeating-linear-gradient(
+        to right,
+        rgba(56,189,248,0.05),
+        rgba(56,189,248,0.05) 1px,
+        transparent 1px,
+        transparent 80px
+    );
+    pointer-events:none;
 }
 
 /* MATRIX CANVAS */
@@ -26,22 +61,7 @@ body{
     left:0;
     width:100%;
     height:100%;
-    z-index:-2;
-}
-
-/* RAIN EFFECT */
-.rain{
-    position:fixed;
-    width:2px;
-    height:20px;
-    background:linear-gradient(#00ffff, #ff00ff);
-    animation:fall linear infinite;
-    z-index:-1;
-}
-
-@keyframes fall{
-    from{ transform:translateY(-100px); }
-    to{ transform:translateY(100vh); }
+    z-index:-3;
 }
 
 .container{
@@ -49,48 +69,48 @@ body{
 }
 
 .identitas{
-    border:1px solid #00ffff;
+    border:1px solid #0ea5e9;
     padding:20px;
     margin-bottom:30px;
-    background:rgba(10,10,10,0.8);
-    box-shadow:0 0 15px #ff00ff;
-    border-radius:10px;
+    background:rgba(2,6,23,0.8);
+    box-shadow:0 0 10px #38bdf8;
+    border-radius:12px;
 }
 
 h1{
     text-align:center;
     margin-bottom:30px;
-    text-shadow:0 0 10px #00ffff, 0 0 20px #ff00ff;
+    text-shadow:0 0 10px #38bdf8, 0 0 20px #22c55e;
 }
 
 .dart-section{
     margin-bottom:40px;
     padding:20px;
-    border:1px solid #00ffff;
-    background:rgba(10,10,10,0.85);
-    box-shadow:0 0 15px #ff00ff;
-    border-radius:10px;
+    border:1px solid #0ea5e9;
+    background:rgba(2,6,23,0.85);
+    box-shadow:0 0 10px #38bdf8;
+    border-radius:12px;
     transition:0.3s;
 }
 
 .dart-section:hover{
-    transform:scale(1.02);
-    box-shadow:0 0 25px #ff00ff;
+    transform:translateY(-5px);
+    box-shadow:0 0 20px #22c55e;
 }
 
 pre{
     background:black;
     padding:15px;
     overflow-x:auto;
-    color:#00ffff;
-    border:1px solid #00ffff;
+    color:#38bdf8;
+    border:1px solid #0ea5e9;
 }
 
 iframe{
     width:100%;
     height:500px;
     margin-top:15px;
-    border:1px solid #ff00ff;
+    border:1px solid #0ea5e9;
     border-radius:10px;
 }
 </style>
@@ -147,7 +167,7 @@ iframe{
 </div>
 
 <script>
-// MATRIX EFFECT
+// MATRIX EFFECT (VERSI HALUS BIAR TIDAK GANGGU)
 const canvas = document.getElementById("matrixCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -164,15 +184,14 @@ for(let x = 0; x < columns; x++){
 }
 
 function draw(){
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillStyle = "rgba(2,6,23,0.1)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.font = fontSize + "px monospace";
+    ctx.fillStyle = "#38bdf8";
 
     for(let i = 0; i < drops.length; i++){
         const text = letters.charAt(Math.floor(Math.random()*letters.length));
-        
-        ctx.fillStyle = Math.random() > 0.5 ? "#00ffff" : "#ff00ff";
         ctx.fillText(text, i*fontSize, drops[i]*fontSize);
 
         if(drops[i]*fontSize > canvas.height && Math.random() > 0.975){
@@ -181,22 +200,8 @@ function draw(){
         drops[i]++;
     }
 }
-setInterval(draw, 35);
 
-// RAIN DROPS
-function createRain(){
-    const rain = document.createElement("div");
-    rain.classList.add("rain");
-    rain.style.left = Math.random()*window.innerWidth + "px";
-    rain.style.animationDuration = (Math.random()*1 + 0.5) + "s";
-    rain.style.opacity = Math.random();
-    document.body.appendChild(rain);
-
-    setTimeout(()=>{
-        rain.remove();
-    },1500);
-}
-setInterval(createRain,50);
+setInterval(draw, 40);
 </script>
 
 </body>
